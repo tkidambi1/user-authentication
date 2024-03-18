@@ -1,22 +1,40 @@
+<!-- login_page.html -->
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Login Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page - TaskQuest</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
-<body>
-    <h2>Login Form</h2>
-    <form action="/login" method="post"> <!-- Update action to your backend login endpoint -->
-        <div>
-            <label for="username">Username:</label>
-            <input type="text" id="username" name="username" required>
+<body class="login">
+
+    <div class="container">
+        <div class="company-info">
+            <h1>Welcome to TaskQuest✔</h1>
+            <p>Make your day-to-day tasks less mundane when going through the same routine!!! </p>
         </div>
-        <div>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required>
+        <span class="separator"></span>
+        <div class="login-form">
+            <h1>Login</h1>
+            <form action="{{ url_for('login') }}" method="post">
+                <input type="text" name="username" placeholder="Username" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <div class="remember-me--forget-password">
+                    <label>
+                        <input type="checkbox" name="rememberMe" checked/>
+                        <span class="text-checkbox">Remember me</span>
+                    </label>
+                    <p><a href="forgot-password.html">Forgot password?</a></p>
+                </div>
+                <button type="submit">Sign In</button>
+            </form>
+            <p>Don't have an account? <a href="{{ url_for('signup') }}">Sign Up</a></p>
         </div>
-        <div>
-            <button type="submit">Login</button>
-        </div>
-    </form>
+    </div>
+
+
+
+
 </body>
 </html>
