@@ -1,0 +1,23 @@
+<!-- welcome_page.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to TaskQuest - Task Management System</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+
+</head>
+<body class="index">
+    <div class="container_index">
+        <div class="welcome-message">
+            <h1>Welcome to TaskQuest - Task Management System</h1>
+            <p>You are now signed in and ready to manage your tasks efficiently.</p>
+            <p>Start <a href="#">creating tasks</a> or explore other features of the system.</p>
+            <p>Logout <a href="{{ url_for('logout') }}">here</a> if you're done.</p>
+        </div>
+    </div>
+</body>
+</html>
+.
